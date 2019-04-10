@@ -7,17 +7,29 @@ public class Flee : SteeringBehaviour
     public GameObject targetGameObject = null;
     public Vector3 target = Vector3.zero;
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrawGizmos()
     {
-        if (targetGameObject != null)
+        if (isActiveAndEnabled && Application.isPlaying)
         {
-            target = targetGameObject.transform.position;
+            Gizmos.color = Color.cyan;
+            if (targetGameObject != null)
+            {
+                target = targetGameObject.transform.position;
+            }
+            Gizmos.DrawLine(transform.position, target);
         }
     }
 
     public override Vector3 Calculate()
     {
-        return boid.FleeForce(target);
+        return - boid.SeekForce(target);
+    }
+
+    public void Update()
+    {
+        if (targetGameObject != null)
+        {
+            target = targetGameObject.transform.position;
+        }
     }
 }

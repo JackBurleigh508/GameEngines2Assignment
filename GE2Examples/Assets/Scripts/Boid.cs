@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boid : MonoBehaviour
 {
-    public List<SteeringBehaviour> behaviours = new List<SteeringBehaviour>();
+    List<SteeringBehaviour> behaviours = new List<SteeringBehaviour>();
 
     public Vector3 force = Vector3.zero;
     public Vector3 acceleration = Vector3.zero;
@@ -28,10 +28,7 @@ public class Boid : MonoBehaviour
 
         foreach (SteeringBehaviour b in behaviours)
         {
-            if (b.isActiveAndEnabled)
-            {
-                this.behaviours.Add(b);
-            }
+            this.behaviours.Add(b);            
         }
     }
 
@@ -58,21 +55,6 @@ public class Boid : MonoBehaviour
         Vector3 desired = clamped * (toTarget / distance);
 
         return desired - velocity;
-    }
-
-    public Vector3 FleeForce(Vector3 target, float fleeDistance = 10.0f)
-    {
-        if (Vector3.Distance(transform.position, target) < fleeDistance)
-        {
-            Vector3 desired = target - transform.position;
-            desired.Normalize();
-            desired *= maxSpeed;
-            return velocity - desired;
-        }
-        else
-        {
-            return Vector3.zero;
-        }
     }
     
 
