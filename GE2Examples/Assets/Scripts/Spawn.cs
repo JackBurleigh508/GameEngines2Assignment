@@ -12,7 +12,7 @@ public class Spawn : MonoBehaviour
     {
         for(int i = 0; i <= numberOfFighters; i++)
         {
-            Instantiate(fighters);
+            Instantiate(fighters, this.transform.parent);
         }
     }
 
