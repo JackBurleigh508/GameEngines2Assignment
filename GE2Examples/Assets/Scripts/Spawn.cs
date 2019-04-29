@@ -12,7 +12,9 @@ public class Spawn : MonoBehaviour
     {
         for(int i = 0; i <= numberOfFighters; i++)
         {
-            Instantiate(fighters, this.transform.parent);
+            GameObject fighter = Instantiate(fighters);
+            fighter.transform.parent = transform;
+            fighter.transform.localPosition = new Vector3(0 + Random.Range(-50, 50), 0 + Random.Range(-50, 50), 0);
         }
     }
 
