@@ -14,7 +14,7 @@ public class Spawn : MonoBehaviour
         {
             GameObject fighter = Instantiate(fighters);
             fighter.transform.parent = transform;
-            fighter.transform.localPosition = new Vector3(0 + Random.Range(-50, 50), 0 + Random.Range(-50, 50), 0);
+            fighter.transform.localPosition = new Vector3(0 + Random.Range(-100, 100), 0 + Random.Range(-100, 100), 0);
         }
     }
 
