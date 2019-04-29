@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Camera1Script : MonoBehaviour
 {
+    public GameObject FirstSpawn;
+    public GameObject NextCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,12 @@ public class Camera1Script : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void Next()
+    {
+        FirstSpawn.SetActive(true);
+        NextCamera.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }
