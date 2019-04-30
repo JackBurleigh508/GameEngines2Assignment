@@ -18,7 +18,7 @@ public class Camera1Script : MonoBehaviour
         
     }
 
-    void Next()
+    public void Next()
     {
         FirstSpawn.SetActive(true);
         NextCamera.SetActive(true);
