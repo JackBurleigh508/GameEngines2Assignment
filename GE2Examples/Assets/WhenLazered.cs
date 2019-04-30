@@ -20,7 +20,7 @@ public class WhenLazered : MonoBehaviour
     {
         if(other.tag == "bad")
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
