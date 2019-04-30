@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - bad
+  - planet
+  - good
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - bad
+  - planet
   - 
   - 
   - 

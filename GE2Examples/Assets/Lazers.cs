@@ -9,7 +9,7 @@ public class Lazers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(Fire());
     }
 
     // Update is called once per frame
@@ -18,9 +18,12 @@ public class Lazers : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    IEnumerator Fire()
     {
+        yield return new WaitForSeconds(20.0f);
         particle.SetActive(true);
+        yield return new WaitForSeconds(10.0f);
+        particle.SetActive(false);
     }
 
     
